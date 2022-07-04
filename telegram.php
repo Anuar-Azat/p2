@@ -6,9 +6,9 @@
 $name = $_POST['user_name'];
 $phone = $_POST['user_phone'];
 $email = $_POST['user_email'];
-$token = "5392125815:AAEHkfuCEHpKqLglbFgYbolyr-X73oBkAyc";
+$token = "53lyr-";
 $txt="";
-$chat_id = "-1001528801833";
+$chat_id = "-33";
 $arr = array(
   'Имя пользователя: ' => $name,
   'Телефон: ' => $phone,
@@ -22,13 +22,10 @@ foreach($arr as $key => $value) {
   
 };
 
-$txt = rawurlencode($txt);  // To encode cyrillic entities
-//$sendToTelegram='https://api.telegram.org/bot' . $token . '/sendMessage?' . http_build_query($parameters);
-//$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
+$txt = rawurlencode($txt); 
 $sendToTelegram = fopen("http://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 
 if ($sendToTelegram) {
- // header('Location:thank-you.html');
  header('Location:thank-you.html');
  //$result = file_get_contents('http://example.com/submit.php', false, $context);
 
